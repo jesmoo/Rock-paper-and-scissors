@@ -1,4 +1,5 @@
 :root {
+  --colorBlue: #182343;
   /* fonts */
   --FontTitle: 'Open Sans Condensed', sans-serif;
   --FontSubtitle: 'Rosario', sans-serif;
@@ -17,6 +18,8 @@ html {
 body {
   padding: 15px;
   font-size: 1.6rem;
+  background-color: var(--colorBlue);
+  color: #fff;
 }
 header {
   width: 100%;
