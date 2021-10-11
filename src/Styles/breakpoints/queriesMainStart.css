@@ -1,0 +1,48 @@
+@media (min-width: 768px) {
+  .header--section {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .header--menu {
+    grid-column: 7 / span 2;
+  }
+  /* main */
+  .container__main {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .main__scoreContainer {
+    grid-column: 2 / span 6;
+  }
+  .main__gameChose {
+    grid-column: 3 / span 4;
+  }
+  .gameChose__item {
+    width: 17rem;
+    height: 17rem;
+  }
+  .main__rules {
+    grid-column: 4 / span 2;
+  }
+}
+@media (min-width: 1024px) {
+  .container__main {
+    width: 100%;
+    max-width: 102.4rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .main__scoreContainer {
+    grid-column: 3 / span 8;
+  }
+  .main__gameChose {
+    grid-column: 3 / 11;
+  }
+  .gameChose__item {
+    width: 24rem;
+    height: 24rem;
+  }
+  .main__rules {
+    margin: 0;
+    grid-column: 10 / span 2;
+  }
+}

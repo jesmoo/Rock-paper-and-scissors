@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Styles/Components/MainStart.css';
+import '../Styles/breakpoints/queriesMainStart.css';
 
 const MainStart = () => {
   return (
