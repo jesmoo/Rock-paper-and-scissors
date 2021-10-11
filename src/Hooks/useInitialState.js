@@ -11,16 +11,22 @@ const useInitialState = () => {
         id: 1,
         classAlt: 'rock',
         url: imgRock,
+        win: 3,
+        lose: 2,
       },
       {
         id: 2,
         classAlt: 'paper',
         url: imgPaper,
+        win: 1,
+        lose: 3,
       },
       {
         id: 3,
         classAlt: 'scissor',
         url: imgScissor,
+        win: 2,
+        lose: 1,
       },
     ]);
   }, []);

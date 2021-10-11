@@ -6,7 +6,6 @@ import '../Styles/breakpoints/queriesMainStart.css';
 
 const MainStart = () => {
   const initialState = useInitialState();
-  console.log(initialState);
   return (
     <main className="container__main">
       <section className="main__scoreContainer">
@@ -35,9 +34,6 @@ const MainStart = () => {
               />
             </Link>
           ))}
-        {/* <div className="gameChose__item rock"></div>
-        <div className="gameChose__item paper"></div>
-        <div className="gameChose__item scissor"></div> */}
       </section>
       <a href="/" className="main__rules">
         <bottom>Rules</bottom>
