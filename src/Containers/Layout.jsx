@@ -1,16 +1,15 @@
+import React from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
-import MainGame from '../Components/MainStart';
-import '../Styles/App.css';
 
-function App() {
+const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <MainGame />
+      {children}
       <Footer />
     </>
   );
-}
+};
 
-export default App;
+export default Layout;
