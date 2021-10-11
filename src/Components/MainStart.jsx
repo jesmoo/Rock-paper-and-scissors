@@ -1,8 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import useInitialState from '../Hooks/useInitialState';
 import '../Styles/Components/MainStart.css';
 import '../Styles/breakpoints/queriesMainStart.css';
 
 const MainStart = () => {
+  const initialState = useInitialState();
+  console.log(initialState);
   return (
     <main className="container__main">
       <section className="main__scoreContainer">
@@ -17,9 +21,23 @@ const MainStart = () => {
         </div>
       </section>
       <section className="main__gameChose">
-        <div className="gameChose__item rock"></div>
+        {initialState &&
+          initialState.map((item) => (
+            <Link
+              className={`gameChose__item border-${item.classAlt} ${item.classAlt}`}
+              to={`/game/${item.id}`}
+              key={item.id}
+            >
+              <img
+                src={item.url}
+                alt={item.classAlt}
+                className={`gameChose__item-Icon`}
+              />
+            </Link>
+          ))}
+        {/* <div className="gameChose__item rock"></div>
         <div className="gameChose__item paper"></div>
-        <div className="gameChose__item scissor"></div>
+        <div className="gameChose__item scissor"></div> */}
       </section>
       <a href="/" className="main__rules">
         <bottom>Rules</bottom>
