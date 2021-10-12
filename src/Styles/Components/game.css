@@ -1,3 +1,18 @@
+.main__gameChose {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  position: relative;
+}
+.backGround-noDisplay {
+  display: none;
+  position: absolute;
+  border-radius: 10rem;
+  top: 0;
+  left: -200rem;
+  bottom: 0;
+  right: 50%;
+}
 .green {
+  display: block;
   background-color: green;
 }

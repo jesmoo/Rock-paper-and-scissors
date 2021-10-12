@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+  .main__gameChose {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+@media (min-width: 1024px) {
+  .main__gameChose {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  .backGround-noDisplay {
+    border-radius: 12rem;
+  }
+}

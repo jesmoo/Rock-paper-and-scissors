@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import ComputerGame from './ComputerGame';
 import useInitialState from '../Hooks/useInitialState';
 import '../Styles/Components/game.css';
+import '../Styles/breakpoints/queriesGame.css';
 
 const Game = (props) => {
   const backGround = useRef();
@@ -37,13 +38,13 @@ const Game = (props) => {
         </div>
       </section>
       <section className="main__gameChose">
+        <div className="backGround-noDisplay" ref={backGround}></div>
         {initialState &&
           initialState.map((item) =>
             item.id === idGame ? (
               <div
                 className={`gameChose__item border-${item.classAlt} `}
                 key={item.id}
-                ref={backGround}
               >
                 <img
                   src={item.url}
