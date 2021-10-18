@@ -3,15 +3,6 @@
     padding-top: 7rem;
     padding-bottom: 7rem;
   }
-  .main__textWinLose {
-    grid-column: 3 / span 4;
-  }
-  .textWinLose__comeBack {
-    padding: 1.4rem 9.5rem;
-  }
-  .textWinLose__comeBack p {
-    font-size: 3.2rem;
-  }
 }
 @media (min-width: 1024px) {
   .main__gameChose {
@@ -20,13 +11,5 @@
   }
   .backGround-noDisplay {
     border-radius: 12rem;
-  }
-  .main__textWinLose {
-    margin-top: 8rem;
-    grid-column: 4 / span 6;
-  }
-  .textWinLose__comeBack {
-    margin-top: 2rem;
-    padding: 1.4rem 15.4rem;
   }
 }
