@@ -10,16 +10,22 @@ const Game = (props) => {
   const idGame = parseInt(props.match.params.id);
   const idComputerBackground = parseInt(props.match.params.idComputer);
   const backGround = useRef();
+  const textWinLose = useRef();
 
   const setWinLose = (item) => {
-    if (item.win === idComputerBackground)
+    if (item.win === idComputerBackground) {
       backGround.current.classList.add('win');
-    if (item.lose === idComputerBackground)
+      textWinLose.current.innerHTML = 'You win';
+    }
+    if (item.lose === idComputerBackground) {
       backGround.current.classList.add('lose');
-    if (item.id === idComputerBackground)
+      textWinLose.current.innerHTML = 'You lose';
+    }
+    if (item.id === idComputerBackground) {
       backGround.current.classList.add('tie');
+      textWinLose.current.innerHTML = 'You tie';
+    }
   };
-
   setTimeout(() => {
     if (initialState && initialState[idGame - 1]) {
       setWinLose(initialState[idGame - 1]);
@@ -57,6 +63,12 @@ const Game = (props) => {
             ) : null
           )}
         {<ComputerGame idComputer={idComputerBackground} />}
+      </section>
+      <section className="main__textWinLose">
+        <h2 ref={textWinLose}>You ...</h2>
+        <Link to="/" className="textWinLose__comeBack" title="Play again">
+          <p>Play again</p>
+        </Link>
       </section>
     </main>
   );

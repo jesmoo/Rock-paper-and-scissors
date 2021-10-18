@@ -24,3 +24,26 @@
   display: block;
   background-color: #e3e3e3;
 }
+.main__textWinLose {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__textWinLose h2 {
+  font-size: 5rem;
+  font-weight: bold;
+}
+.textWinLose__comeBack {
+  padding: 1.4rem 6.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  border-radius: 0.8rem;
+  background-color: #fdfdfd;
+}
+.textWinLose__comeBack p {
+  width: 100%;
+  color: #182343;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
