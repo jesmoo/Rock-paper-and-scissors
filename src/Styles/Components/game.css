@@ -12,7 +12,15 @@
   bottom: 0;
   right: 50%;
 }
-.green {
+.win {
   display: block;
-  background-color: green;
+  background-color: #4d8a2b;
+}
+.lose {
+  display: block;
+  background-color: #f6aa6a;
+}
+.tie {
+  display: block;
+  background-color: #e3e3e3;
 }

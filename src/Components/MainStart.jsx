@@ -6,6 +6,12 @@ import '../Styles/breakpoints/queriesMainStart.css';
 
 const MainStart = () => {
   const initialState = useInitialState();
+
+  const idComp = () => {
+    const computer = Math.floor(Math.random() * 3 + 1);
+    return computer;
+  };
+
   return (
     <main className="container__main">
       <section className="main__scoreContainer">
@@ -24,7 +30,7 @@ const MainStart = () => {
           initialState.map((item) => (
             <Link
               className={`gameChose__item border-${item.classAlt} ${item.classAlt}`}
-              to={`/game/${item.id}`}
+              to={`/game/${item.id}/${idComp()}`}
               key={item.id}
             >
               <img

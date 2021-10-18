@@ -1,29 +1,31 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import ComputerGame from './ComputerGame';
 import useInitialState from '../Hooks/useInitialState';
 import '../Styles/Components/game.css';
 import '../Styles/breakpoints/queriesGame.css';
 
 const Game = (props) => {
-  const backGround = useRef();
   const initialState = useInitialState();
   const idGame = parseInt(props.match.params.id);
+  const idComputerBackground = parseInt(props.match.params.idComputer);
+  const backGround = useRef();
 
-  const idComp = () => {
-    let computer = Math.floor(Math.random() * 3 + 1);
-    if (computer === idGame) {
-      computer = Math.floor(Math.random() * 3 + 1);
+  const setWinLose = (item) => {
+    if (item.win === idComputerBackground)
+      backGround.current.classList.add('win');
+    if (item.lose === idComputerBackground)
+      backGround.current.classList.add('lose');
+    if (item.id === idComputerBackground)
+      backGround.current.classList.add('tie');
+  };
+
+  setTimeout(() => {
+    if (initialState && initialState[idGame - 1]) {
+      setWinLose(initialState[idGame - 1]);
     }
-    return computer;
-  };
-  const setWinLose = () => {
-    console.log(backGround.current.classList.add('green'));
-  };
-  useEffect(() => {
-    setTimeout(() => {
-      setWinLose();
-    }, 300);
-  }, []);
+  }, 300);
+
   return (
     <main className="container__main">
       <section className="main__scoreContainer">
@@ -54,7 +56,7 @@ const Game = (props) => {
               </div>
             ) : null
           )}
-        {<ComputerGame idComputer={idComp()} />}
+        {<ComputerGame idComputer={idComputerBackground} />}
       </section>
     </main>
   );
