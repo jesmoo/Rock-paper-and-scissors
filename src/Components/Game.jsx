@@ -1,31 +1,43 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ComputerGame from './ComputerGame';
 import useInitialState from '../Hooks/useInitialState';
+import scoreClass from '../utils/ScoreGame';
 import '../Styles/Components/game.css';
 import '../Styles/breakpoints/queriesGame.css';
 
 const Game = (props) => {
+  const gameScore = scoreClass;
   const initialState = useInitialState();
+  useEffect(() => {
+    gameScore.numRandom();
+  }, []);
+
   const idGame = parseInt(props.match.params.id);
-  const idComputerBackground = parseInt(props.match.params.idComputer);
   const backGround = useRef();
 
   const setWinLose = (item) => {
-    if (item.win === idComputerBackground)
+    if (item.win === gameScore.idComp) {
       backGround.current.classList.add('win');
-    if (item.lose === idComputerBackground)
+      textWinLose.current.innerHTML = 'You win';
+      gameScore.sumScore();
+    }
+    if (item.lose === gameScore.idComp) {
+      gameScore.loseScore();
       backGround.current.classList.add('lose');
-    if (item.id === idComputerBackground)
+      textWinLose.current.innerHTML = 'You lose';
+    }
+    if (item.id === gameScore.idComp) {
       backGround.current.classList.add('tie');
   };
 
-  setTimeout(() => {
-    if (initialState && initialState[idGame - 1]) {
+  if (initialState && initialState[idGame - 1]) {
+    let count = 0;
+    if (count === 0) {
       setWinLose(initialState[idGame - 1]);
     }
-  }, 300);
-
+    count++;
+  }
   return (
     <main className="container__main">
       <section className="main__scoreContainer">
@@ -36,7 +48,7 @@ const Game = (props) => {
         </div>
         <div className="scoreContainer__score">
           <p>Score</p>
-          <h3>0</h3>
+          <h3>{gameScore.ScoreNum}</h3>
         </div>
       </section>
       <section className="main__gameChose">
@@ -56,7 +68,7 @@ const Game = (props) => {
               </div>
             ) : null
           )}
-        {<ComputerGame idComputer={idComputerBackground} />}
+        {<ComputerGame idComputer={gameScore.idComp} />}
       </section>
     </main>
   );

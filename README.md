@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Personal project consisting of rock, paper, scissors. When you choose one, the user is sent to another page with the one he/she chose and is told whether he/she won or lost, depending on the computer's choice.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
