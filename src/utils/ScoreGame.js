@@ -1,19 +1,13 @@
 class ScoreGame {
   constructor() {
     this.score = 0;
-    this.comps = 0;
-    this.comps2 = 0;
     this.computer = 0;
   }
   sumScore() {
-    if (this.comps % 2 === 0) this.score++;
-    this.comps++;
+    this.score++;
   }
   loseScore() {
-    if (this.comps2 % 2 === 0) {
-      if (this.score > 0) this.score = this.score - 1;
-    }
-    this.comps2++;
+    if (this.score > 0) this.score = this.score - 1;
   }
   numRandom() {
     this.computer = Math.floor(Math.random() * 3 + 1);
