@@ -1,15 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useInitialState from '../Hooks/useInitialState';
+import scoreClass from '../utils/ScoreGame';
+import Swal from 'sweetalert2';
+import rulesImg from '../assets/img/mobile-rules-modal.jpg';
 import '../Styles/Components/MainStart.css';
 import '../Styles/breakpoints/queriesMainStart.css';
 
 const MainStart = () => {
   const initialState = useInitialState();
+  const gameScore = scoreClass;
 
-  const idComp = () => {
-    const computer = Math.floor(Math.random() * 3 + 1);
-    return computer;
+  const handleClick = () => {
+    Swal.fire({
+      imageUrl: rulesImg,
+      imageHeight: 500,
+      imageAlt: 'Rules',
+    });
   };
 
   return (
@@ -22,7 +29,7 @@ const MainStart = () => {
         </div>
         <div className="scoreContainer__score">
           <p>Score</p>
-          <h3>0</h3>
+          <h3>{gameScore.ScoreNum}</h3>
         </div>
       </section>
       <section className="main__gameChose">
@@ -30,7 +37,7 @@ const MainStart = () => {
           initialState.map((item) => (
             <Link
               className={`gameChose__item border-${item.classAlt} ${item.classAlt}`}
-              to={`/game/${item.id}/${idComp()}`}
+              to={`/game/${item.id}`}
               key={item.id}
             >
               <img
@@ -41,9 +48,9 @@ const MainStart = () => {
             </Link>
           ))}
       </section>
-      <a href="/" className="main__rules">
-        <bottom>Rules</bottom>
-      </a>
+      <div id="idBtn" className="main__rules" onClick={handleClick}>
+        <p>Rules</p>
+      </div>
     </main>
   );
 };
