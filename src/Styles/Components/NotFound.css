@@ -13,11 +13,12 @@ figure {
   width: 64em;
 }
 figcaption {
+  height: 17em;
   color: #fff;
   display: flex;
-  align-content: space-between;
   flex-wrap: wrap;
-  height: 17em;
+  justify-content: center;
+  align-content: space-between;
 }
 figcaption span:before,
 .sad-mac:before {
@@ -30,7 +31,7 @@ figcaption span:before,
 figcaption span {
   display: inline-block;
   margin: 0 2em;
-  width: 4em;
+  width: 3.2em;
   height: 6em;
 }
 .sr-text {
@@ -107,6 +108,27 @@ figcaption span {
 .u:before {
   box-shadow: 1em 1em, 1em 2em, 1em 3em, 1em 4em, 1em 5em, 4em 1em, 4em 2em,
     4em 3em, 4em 4em, 4em 5em, 2em 6em, 3em 6em;
+}
+.section__main-NotFoun {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: center;
+  background-color: #fdfdfd;
+  border-radius: 8px;
+}
+.main-NotFoun__comeBack {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.main-NotFoun__comeBack p {
+  color: #182343;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 /* III. Responsiveness */
 /* This cannot be smoothly done using viewport units; sprite pixels will look divided when font size is a floating point. */
